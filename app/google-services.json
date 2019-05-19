@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "152730067865",
+    "firebase_url": "https://figaro-aka.firebaseio.com",
+    "project_id": "figaro-aka",
+    "storage_bucket": "figaro-aka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152730067865:android:148ad3152633cacc",
+        "android_client_info": {
+          "package_name": "com.akaaka.figaro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152730067865-33jo5gsbdg6s8e2ll41veir7vpfdi8hh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akaaka.figaro",
+            "certificate_hash": "4563af7cb32d2840f259053bf030e98929005fd3"
+          }
+        },
+        {
+          "client_id": "152730067865-9u0uki0dgdpf8imao0mg60gm1h1m3e0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8L_rv-viNfWuoL_FOwhh2YqzZV5g_Yvk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152730067865-9u0uki0dgdpf8imao0mg60gm1h1m3e0i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

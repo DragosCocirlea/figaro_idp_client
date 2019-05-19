@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".ProfileFragment">
+
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/profile_picture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/common_google_signin_btn_icon_light"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_username"
+            android:layout_below="@id/profile_picture"
+            android:layout_centerHorizontal="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+    />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_bundle_email"
+            android:layout_below="@id/profile_username"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/email"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="20dp"
+                android:text="Email address"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/profile_email"
+                android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_bundle_cellphone"
+            android:layout_below="@id/profile_bundle_email"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/phone"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="20dp"
+                android:text="Cellphone number"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/profile_cellphone"
+                android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_bundle_birthday"
+            android:layout_below="@id/profile_bundle_cellphone"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/cake"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="20dp"
+                android:text="Birthday"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/profile_birthday"
+
+                android:textSize="20sp"/>
+    </LinearLayout>
+
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_sex"
+            android:text=""
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/profile_username"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@id/profile_sex"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+    />
+
+
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_logout"
+            android:background="@drawable/rounded_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:layout_below="@id/login_password"
+            android:text="SIGN OUT" android:onClick="onClick"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_edit_account"
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="12dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:layout_above="@id/button_logout"
+            android:text="Edit account"/>
+
+</RelativeLayout>

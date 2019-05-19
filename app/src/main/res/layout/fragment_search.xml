@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".HomeFragment">
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+            android:id="@+id/search_top_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top" />
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_name"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:hint="Search for a barbershop"
+            android:gravity="center"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:layout_below="@id/search_top_navigation"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/search_name">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:id="@+id/search_result"/>-->
+
+</LinearLayout>
