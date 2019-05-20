@@ -34,14 +34,7 @@
             android:layout_height="match_parent"
             android:id="@+id/recycler_view"
             android:layout_marginTop="8dp"
-            android:layout_below="@id/search_name">
+            android:layout_below="@id/search_name"/>
 
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:id="@+id/search_result"/>-->
 
 </LinearLayout>

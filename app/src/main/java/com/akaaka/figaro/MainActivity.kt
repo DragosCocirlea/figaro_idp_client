@@ -1,25 +1,29 @@
 package com.akaaka.figaro
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentTransaction
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import khttp.post as httpPost
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener, SearchFragment.OnFragmentInteractionListener {
 
     override fun onFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    companion object {
+        private val TAG: String = MainActivity::class.java.simpleName
+        private const val REQUEST_ACCESS_FINE_LOCATION = 111
     }
 
     private lateinit var auth: FirebaseAuth
@@ -77,6 +81,7 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
 
             true
         }
+
 
 //        Toast.makeText(this, "User logged in is ${auth.currentUser!!.email}", Toast.LENGTH_LONG).show();
     }

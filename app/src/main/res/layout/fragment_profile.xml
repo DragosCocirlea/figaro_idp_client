@@ -1,154 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".ProfileFragment">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   tools:context=".ProfileFragment">
 
-    <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:id="@+id/profile_picture"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/common_google_signin_btn_icon_light"/>
-
-    <TextView
-            android:layout_width="wrap_content"
+    <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/profile_username"
-            android:layout_below="@id/profile_picture"
-            android:layout_centerHorizontal="true"
-            android:textSize="40sp"
-            android:textStyle="bold"
-    />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/profile_layout">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/profile_picture"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/common_google_signin_btn_icon_light"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_username"
+                    android:layout_below="@id/profile_picture"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_picture"
+                    android:layout_marginTop="10dp"
+            />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_bundle_email"
+                    android:layout_below="@id/profile_username"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_username">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/email"
+                        android:layout_marginLeft="20dp"
+                        android:drawablePadding="20dp"
+                        android:textSize="18sp"
+                        android:text="Email address"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/profile_email"
+                        android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_bundle_cellphone"
+                    android:layout_below="@id/profile_bundle_email"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_bundle_email">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/phone"
+                        android:layout_marginLeft="20dp"
+                        android:drawablePadding="20dp"
+                        android:textSize="18sp"
+
+                        android:text="Cellphone number"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/profile_cellphone"
+                        android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_bundle_birthday"
+                    android:layout_below="@id/profile_bundle_cellphone"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_bundle_cellphone">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/cake"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="18sp"
+                        android:drawablePadding="20dp"
+                        android:text="Birthday"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/profile_birthday"
+
+                        android:textSize="20sp"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/profile_bundle_email"
-            android:layout_below="@id/profile_username"
-            android:layout_marginTop="20dp"
+            android:id="@+id/buttons_bundle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
             android:orientation="vertical">
 
-        <TextView
+        <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/email"
+                android:id="@+id/button_logout"
+                android:background="@drawable/rounded_button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:drawablePadding="20dp"
-                android:text="Email address"/>
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_marginTop="20dp"
+                android:text="SIGN OUT"/>
 
-        <TextView
+        <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/profile_email"
-                android:textSize="20sp"/>
+                android:id="@+id/button_edit_account"
+                android:background="@drawable/rounded_button"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_above="@id/button_logout"
+                android:text="Edit account"/>
     </LinearLayout>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profile_bundle_cellphone"
-            android:layout_below="@id/profile_bundle_email"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/phone"
-                android:layout_marginLeft="20dp"
-                android:drawablePadding="20dp"
-                android:text="Cellphone number"/>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/profile_cellphone"
-                android:textSize="20sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profile_bundle_birthday"
-            android:layout_below="@id/profile_bundle_cellphone"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/cake"
-                android:layout_marginLeft="20dp"
-                android:drawablePadding="20dp"
-                android:text="Birthday"/>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/profile_birthday"
-
-                android:textSize="20sp"/>
-    </LinearLayout>
-
-
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/profile_sex"
-            android:text=""
-            android:layout_marginTop="16dp"
-            android:layout_below="@id/profile_username"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"
-    />
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_below="@id/profile_sex"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"
-    />
-
-
-
-    <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_logout"
-            android:background="@drawable/rounded_button"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="80dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="sans-serif"
-            android:textStyle="normal|bold"
-            android:layout_below="@id/login_password"
-            android:text="SIGN OUT" android:onClick="onClick"/>
-
-    <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_edit_account"
-            android:background="@drawable/rounded_button"
-            android:layout_marginBottom="12dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="sans-serif"
-            android:textStyle="normal|bold"
-            android:layout_above="@id/button_logout"
-            android:text="Edit account"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
