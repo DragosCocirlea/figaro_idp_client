@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   tools:context=".ProfileFragment">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ProfileFragment"
+        android:background="#CFE9B0"
+>
 
     <ScrollView
             android:layout_width="match_parent"
@@ -51,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/profile_bundle_email"
                     android:layout_below="@id/profile_username"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     android:orientation="vertical"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -71,6 +74,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:id="@+id/profile_email"
+                        android:layout_marginTop="8dp"
                         android:textSize="20sp"/>
             </LinearLayout>
 
@@ -100,6 +104,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:id="@+id/profile_cellphone"
+                        android:layout_marginTop="8dp"
                         android:textSize="20sp"/>
             </LinearLayout>
 
@@ -128,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:id="@+id/profile_birthday"
-
+                        android:layout_marginTop="8dp"
                         android:textSize="20sp"/>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -148,21 +153,6 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_logout"
-                android:background="@drawable/rounded_button"
-                android:layout_alignParentBottom="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal|bold"
-                android:layout_marginTop="20dp"
-                android:text="SIGN OUT"/>
-
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/button_edit_account"
                 android:background="@drawable/rounded_button"
                 android:layout_marginRight="20dp"
@@ -174,6 +164,21 @@
                 android:textStyle="normal|bold"
                 android:layout_above="@id/button_logout"
                 android:text="Edit account"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_logout"
+                android:background="@drawable/rounded_button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_marginTop="20dp"
+                android:text="SIGN OUT"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

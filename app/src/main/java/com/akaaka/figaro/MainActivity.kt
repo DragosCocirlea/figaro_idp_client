@@ -1,19 +1,19 @@
 package com.akaaka.figaro
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
-import khttp.post as httpPost
+import com.amazonaws.mobile.client.AWSMobileClient
+
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import kotlinx.android.synthetic.main.activity_main.*
+import com.amazonaws.mobile.client.AWSStartupResult
+import com.amazonaws.mobile.client.AWSStartupHandler
+
+
 
 class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener, SearchFragment.OnFragmentInteractionListener {
 
@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
         setContentView(R.layout.activity_main)
 
         auth = FirebaseAuth.getInstance()
+
+        AWSMobileClient.getInstance().initialize(this).execute()
 
         profileFragment = ProfileFragment.newInstance()
         homeFragment = HomeFragment.newInstance()

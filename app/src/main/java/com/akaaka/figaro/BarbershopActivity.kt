@@ -13,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import com.github.kittinunf.fuel.core.extensions.jsonBody
 import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_barbershop.*
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -30,6 +31,8 @@ class BarbershopActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
     val timeslotsList = ArrayList<String>()
     var timeslotsCharSequence : Array<CharSequence>? = null
     var barberID : Int = -1
+    private lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +40,8 @@ class BarbershopActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
 
         val i = intent
         id = i.getIntExtra("ID", 0)
+
+        auth = FirebaseAuth.getInstance()
 
         val dataBBS = JSONObject()
             .put("ID", id)
@@ -103,11 +108,11 @@ class BarbershopActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
 
                             val timeslotArray = JSONArray(String(response.data))
 
-                            timeslotsCharSequence = Array<CharSequence>(10) {
+                            timeslotsCharSequence = Array<CharSequence>(timeslotArray.length()) {
                                     i -> "None"
                             }
 
-                            for (i : Int in 0 until 10) {
+                            for (i : Int in 0 until timeslotArray.length()) {
                                 val timeslot = timeslotArray.getString(i)
                                 timeslotsList.add(timeslot)
                                 timeslotsCharSequence!![i] = timeslot
@@ -155,11 +160,12 @@ class BarbershopActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
                 .put("END_D", date[2])
                 .put("END_H", times[2])
                 .put("END_MIN", times[3])
+                .put("User_ID", auth.currentUser!!.email.toString())
 
-            val ipAppointment = "http://18.197.8.98:5070/selectbarber"
+            val ipAppointment = "http://18.197.8.98:5070/appoint"
             val reqAppointment = ipAppointment.httpPost().jsonBody(dataAppointment.toString())
 
-            reqAppointment.response { _, response, result ->
+            reqAppointment.response { _, _, result ->
                 when (result) {
                     is Result.Success -> {
                         onBackPressed()
