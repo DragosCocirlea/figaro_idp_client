@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".RegisterActivity"
+        tools:context=".activities.Register.RegisterActivity"
         android:background="#CFE9B0">
 
     <TextView
@@ -135,13 +135,13 @@
             android:background="@drawable/rounded_button"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginBottom="40dp"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:fontFamily="sans-serif"
             android:textStyle="normal|bold"
             android:layout_below="@id/register_password"
             android:text="REGISTER"
-            app:layout_constraintTop_toBottomOf="@id/register_password"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 

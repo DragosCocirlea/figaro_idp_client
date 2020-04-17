@@ -29,7 +29,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rv_main_adress"
+                        android:id="@+id/rv_main_address"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/rv_main_bbs_name"
                         android:text="Bulevardul Alexandru Ioan Cuza, Bucuresti"
@@ -42,12 +42,17 @@
                         android:orientation="vertical"
                         android:layout_marginTop="8dp"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/rv_main_adress">
+                        app:layout_constraintTop_toBottomOf="@id/rv_main_address">
 
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Barber: "/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Service: "/>
 
 
                         <TextView
@@ -58,7 +63,7 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Between: "/>
+                                android:text="Time: "/>
 
                 </LinearLayout>
 
@@ -73,25 +78,22 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/rv_main_barber"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/rv_main_adress"
-                        />
+                                android:id="@+id/rv_main_barber"/>
 
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/rv_main_date"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/rv_main_barber"/>
+                                android:id="@+id/rv_main_service"/>
 
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/rv_main_between"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/rv_main_date"
-                        />
+                                android:id="@+id/rv_main_date"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/rv_main_time"/>
                 </LinearLayout>
 
                 <ImageButton
@@ -100,11 +102,17 @@
                         android:src="@drawable/maps"
                         android:id="@+id/rv_main_map_button"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/rv_main_titles"
-                        app:layout_constraintBottom_toBottomOf="@id/rv_main_titles"/>
+                        app:layout_constraintTop_toTopOf="@id/rv_main_bbs_name"
+                        />
 
-
-
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/delete"
+                        android:id="@+id/rv_main_delete_button"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/rv_main_titles"
+                        />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

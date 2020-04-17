@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".HomeFragment"
+        tools:context=".activities.Main.HomeFragment"
         android:background="#CFE9B0"
 >
 
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/search_name"
-            android:layout_marginTop="0dp"
+            android:inputType="text"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textSize="16sp"
@@ -28,15 +28,15 @@
             android:maxLines="1"
             android:lines="1"
             android:singleLine="true"
-            android:imeOptions="actionDone"
-            android:layout_below="@id/search_top_navigation"/>
+            android:imeOptions="actionDone"/>
 
     <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recycler_view"
             android:layout_marginTop="8dp"
-            android:layout_below="@id/search_name"/>
+            tools:visibility="visible"
+            android:layout_marginBottom="60dp"/>
 
 
 </LinearLayout>

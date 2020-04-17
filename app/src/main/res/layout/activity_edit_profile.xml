@@ -5,7 +5,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".EditProfileActivity">
+        tools:context=".activities.EditProfile.EditProfileActivity"
+        android:background="#CFE9B0">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -57,7 +58,8 @@
                 android:id="@+id/edit_profile_picture"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/common_google_signin_btn_icon_light"/>
+                android:background="@drawable/ic_launcher_background"
+                android:src="@drawable/ic_launcher_foreground"/>
 
         <Button
                 android:layout_width="wrap_content"
@@ -107,16 +109,18 @@
                 app:layout_constraintTop_toBottomOf="@id/edit_profile_name_input"/>
 
         <EditText
+                android:id="@+id/edit_profile_email_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit_profile_email_input"
-                app:layout_constraintTop_toBottomOf="@id/edit_profile_email"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="none"
-                android:clickable="true"
-                android:focusable="false"/>
+                android:inputType="textEmailAddress"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/edit_profile_email"
+                tools:layout_editor_absoluteX="20dp" />
 
         <TextView
                 android:layout_width="match_parent"

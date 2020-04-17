@@ -8,48 +8,47 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
-            android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
         <activity
-                android:name=".BarbershopActivity"
+                android:name=".activities.MakeAppointment.MakeAppointmentActivity"
                 android:label="@string/title_activity_barbershop"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".EditProfileActivity"
+                android:name=".activities.EditProfile.EditProfileActivity"
                 android:label="@string/title_activity_edit_profile"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".RegisterActivity"
+                android:name=".activities.Register.RegisterActivity"
                 android:label="@string/title_activity_register"
                 android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustResize"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name=".activities.Main.MainActivity"
                 android:label="@string/title_activity_main"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".SignInActivity"
+                android:name=".activities.SignIn.SignInActivity"
                 android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustResize"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
 
     </application>
 

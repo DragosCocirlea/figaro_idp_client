@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".ProfileFragment"
+        tools:context=".activities.Main.ProfileFragment"
         android:background="#CFE9B0"
 >
 
@@ -29,7 +29,8 @@
                     android:id="@+id/profile_picture"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/common_google_signin_btn_icon_light"
+                    android:background="@drawable/ic_launcher_background"
+                    android:src="@drawable/ic_launcher_foreground"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -162,8 +163,23 @@
                 android:textColor="#FFFFFF"
                 android:fontFamily="sans-serif"
                 android:textStyle="normal|bold"
-                android:layout_above="@id/button_logout"
+                android:layout_above="@id/button_delete_account"
                 android:text="Edit account"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_delete_account"
+                android:background="@drawable/rounded_button"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_above="@id/button_logout"
+                android:text="Delete account"/>
 
         <Button
                 android:layout_width="match_parent"
@@ -177,7 +193,7 @@
                 android:textColor="#FFFFFF"
                 android:fontFamily="sans-serif"
                 android:textStyle="normal|bold"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="SIGN OUT"/>
     </LinearLayout>
 

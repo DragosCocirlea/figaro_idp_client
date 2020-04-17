@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".BarbershopActivity"
+        tools:context=".activities.MakeAppointment.MakeAppointmentActivity"
         android:background="#CFE9B0"
         >
 
@@ -17,6 +17,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
+                android:padding="10dp"
                 android:gravity="center"
                 android:background="@drawable/rounded_button_google"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -78,6 +79,31 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:id="@+id/barbershop_service"
+                android:background="#FFFFFF"
+                android:inputType="none"
+                android:clickable="true"
+                android:focusable="false"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp"
+                android:textColor="#333333"
+                android:drawablePadding="25dp"
+                android:hint="3. Service"
+                android:textColorHint="#d8d8d8"
+                android:paddingTop="5dp"
+                android:paddingLeft="20dp"
+                android:drawableLeft="@drawable/hairdryer"
+                android:fontFamily="sans-serif"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barbershop_barber"
+                />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/barbershop_timeslot"
                 android:background="@drawable/rounded_edittext_bottom"
                 android:inputType="none"
@@ -97,7 +123,7 @@
                 android:fontFamily="sans-serif"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barbershop_barber"
+                app:layout_constraintTop_toBottomOf="@id/barbershop_service"
         />
 
         <Button

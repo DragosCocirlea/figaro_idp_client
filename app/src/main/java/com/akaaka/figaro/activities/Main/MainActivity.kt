@@ -1,32 +1,20 @@
-package com.akaaka.figaro
+package com.akaaka.figaro.activities.Main
 
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
-import com.google.firebase.auth.FirebaseAuth
-import com.amazonaws.mobile.client.AWSMobileClient
-
-
+import com.akaaka.figaro.R
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import kotlinx.android.synthetic.main.activity_main.*
-import com.amazonaws.mobile.client.AWSStartupResult
-import com.amazonaws.mobile.client.AWSStartupHandler
 
-
-
-class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener, SearchFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(),
+    HomeFragment.OnFragmentInteractionListener,
+    ProfileFragment.OnFragmentInteractionListener,
+    SearchFragment.OnFragmentInteractionListener {
 
     override fun onFragmentInteraction(uri: Uri) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-    companion object {
-        private val TAG: String = MainActivity::class.java.simpleName
-        private const val REQUEST_ACCESS_FINE_LOCATION = 111
-    }
-
-    private lateinit var auth: FirebaseAuth
 
     lateinit var profileFragment : ProfileFragment
     lateinit var homeFragment : HomeFragment
@@ -36,23 +24,20 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        auth = FirebaseAuth.getInstance()
-
-        AWSMobileClient.getInstance().initialize(this).execute()
-
         profileFragment = ProfileFragment.newInstance()
         homeFragment = HomeFragment.newInstance()
         searchFragment = SearchFragment.newInstance()
 
         val bottomNavigation = bottom_navigation
 
-        val item1 = AHBottomNavigationItem("Account", R.drawable.account, R.color.color_tab_1)
-        val item2 = AHBottomNavigationItem("Home", R.drawable.home, R.color.color_tab_2)
-        val item3 = AHBottomNavigationItem("Search", R.drawable.magnify, R.color.color_tab_3)
+        val item1 = AHBottomNavigationItem("Account", R.drawable.account)
+        val item2 = AHBottomNavigationItem("Home", R.drawable.home)
+        val item3 = AHBottomNavigationItem("Search", R.drawable.magnify)
 
         bottom_navigation.addItem(item1)
         bottom_navigation.addItem(item2)
         bottom_navigation.addItem(item3)
+        bottomNavigation.isBehaviorTranslationEnabled = false
 
         bottom_navigation.currentItem = 1
         supportFragmentManager
@@ -83,9 +68,6 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
 
             true
         }
-
-
-//        Toast.makeText(this, "User logged in is ${auth.currentUser!!.email}", Toast.LENGTH_LONG).show();
     }
 
     override fun onBackPressed() {
@@ -102,5 +84,3 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
 
     }
 }
-
-
