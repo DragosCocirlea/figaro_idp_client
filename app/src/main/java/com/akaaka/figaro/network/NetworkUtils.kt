@@ -13,7 +13,7 @@ import com.github.kittinunf.fuel.httpPost
 import org.json.JSONObject
 
 object NetworkUtils {
-    private const val serverIP = "http://192.168.0.105:5000/"
+    private const val serverIP = "http://ec2-3-122-94-77.eu-central-1.compute.amazonaws.com:5000/"
 
     fun httpRequest(type: String, action: String, body: JSONObject? = null, token: String = ""): Request {
         val ip = serverIP + action

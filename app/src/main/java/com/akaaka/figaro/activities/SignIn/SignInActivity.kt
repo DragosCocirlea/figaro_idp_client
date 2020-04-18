@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
@@ -126,12 +127,12 @@ class SignInActivity : AppCompatActivity() {
             prefsEditor.apply()
         }
 
-//        val prefs = getSharedPreferences("com.akaaka.figaro.prefs", 0)
-//        val access = prefs.getString("access_token", "fmm")
-//        val refresh = prefs.getString("refresh_token", "fmm")
-//
-//        Log.d("figaro_access", access)
-//        Log.d("figaro_refresh", refresh)
+        val prefs = getSharedPreferences("com.akaaka.figaro.prefs", 0)
+        val acc = prefs.getString("access_token", "fmm")
+        val refr = prefs.getString("refresh_token", "fmm")
+
+        Log.d("figaro_access", acc!!)
+        Log.d("figaro_refresh", refr!!)
 
         startActivity(Intent(this, MainActivity:: class.java))
         finish()
